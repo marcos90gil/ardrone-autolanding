@@ -1,0 +1,30 @@
+{
+  "name": "ardrone-autolanding",
+  "version": "0.1.0",
+  "description": "Autonomous landing system for a Parrot AR-Drone 2 drone with control and image processing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcos90gil/ardrone-autolanding.git"
+  },
+  "keywords": [
+    "nodecopter",
+    "webflight",
+    "image",
+    "processing",
+    "control",
+    "autolanding",
+    "drone",
+    "node",
+    "javascript"
+  ],
+  "author": "Marcos Gil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcos90gil/ardrone-autolanding/issues"
+  },
+  "homepage": "https://github.com/marcos90gil/ardrone-autolanding"
+}
