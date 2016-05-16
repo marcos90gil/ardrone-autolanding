@@ -10,7 +10,7 @@
         this.cockpit = cockpit;
 
         // Add required UI elements
-        $('#cockpit').append('<canvas id="dartboard" width="640" height="360"></canvas>');
+        $('#cockpit').append('<canvas id="dartboard" class="hidden" width="640" height="360"></canvas>');
         this.ctx = $('#dartboard').get(0).getContext('2d');
 
         // Bind on window events to resize
@@ -40,7 +40,7 @@
         this.ctx.stroke();
 
         //vertical
-        this.ctx.strokeStyle = 'gold';
+        this.ctx.strokeStyle = 'red';
         this.ctx.fillStyle = 'white';
         this.ctx.lineWidth = 2;
 
