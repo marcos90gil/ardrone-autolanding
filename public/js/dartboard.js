@@ -1,6 +1,7 @@
 (function(window, document, $, undefined) {
     'use strict';
 
+    var channel = 0;
 
     /*Constructor*/
     var Dartboard = function Dartboard(cockpit) {
@@ -10,8 +11,19 @@
         this.cockpit = cockpit;
 
         // Add required UI elements
-        $('#cockpit').append('<canvas id="dartboard" class="hidden" width="640" height="360"></canvas>');
+        $('#cockpit').append('<canvas id="dartboard" width="640" height="360"></canvas>');
         this.ctx = $('#dartboard').get(0).getContext('2d');
+
+        // Bind to pilot/channel events on websockets
+        this.cockpit.socket.on('/pilot/channel', function(cmd) {
+            channel = (channel == 0) ? 1 : 0;
+            if (channel === 1) {
+                $('#dartboard').removeClass('hidden');
+            } else {
+                $('#dartboard').addClass('hidden');
+                console.log("Hidding dartboard after the channel changed to %d", channel);
+            }
+        });
 
         // Bind on window events to resize
         var land = this;
